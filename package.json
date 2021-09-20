@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "@dorian-eydoux/pronote-api": "^2.3.4",
-    "dotenv": "^10.0.0"
+    "@notionhq/client": "^0.3.2"
   }
 }

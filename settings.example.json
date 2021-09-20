@@ -2,5 +2,8 @@
     "pronote" : {
         "username": "username",
         "password" : "password"
+    },
+    "notion" : {
+        "integration_token" : "secret_XXXXXX"
     }
 }
