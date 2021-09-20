@@ -1,5 +1,6 @@
 {
     "pronote" : {
+        "endpoint_url" : "https://pronote.example.com/pronote",
         "username": "username",
         "password" : "password"
     },

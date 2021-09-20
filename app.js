@@ -5,7 +5,7 @@ const settings = JSON.parse(fs.readFileSync("./settings.json"));
 
 
 const notion = new Notion(settings.notion.integration_token);
-const url = 'https://0790036k.index-education.net/pronote/';
+const url = settings.pronote.endpoint_url;
 const username = settings.pronote.username;
 const password = settings.pronote.password;
 const casChallenge = settings.pronote.cas;
