@@ -1,6 +1,8 @@
-const pronote = require('@dorian-eydoux/pronote-api');
-const settings = require("./settings.json");
-const { Notion } = require("./common/notion/Notion");
+import pronote from "@dorian-eydoux/pronote-api";
+import Notion from "./common/notion/Notion.js";
+import fs from "fs";
+const settings = JSON.parse(fs.readFileSync("./settings.json"));
+
 
 const notion = new Notion(settings.notion.integration_token);
 const url = 'https://0790036k.index-education.net/pronote/';
