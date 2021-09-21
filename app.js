@@ -15,7 +15,10 @@ const casChallenge = settings.pronote.cas;
 async function main() {
     const session = await pronote.login(url, username, password, casChallenge);
     let currentDate = new Date();
-    session.homeworks(new Date(currentDate.getFullYear(), 8, 1), currentDate).then(r => console.log(r));
+    session.homeworks(new Date(currentDate.getFullYear(), 8, 1), currentDate).then(r => 
+        r.forEach(work => {
+            console.log(`COURS : ${work.subject}, DESCRIPTION : ${work.description}`);
+        }));
 }
 
 
