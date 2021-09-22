@@ -1,5 +1,5 @@
-import pronote from "@dorian-eydoux/pronote-api";
-import Notion from "./common/notion/Notion.js";
+import Notion from "./common/notion/NotionClient.js";
+import PronoteClient from "./common/pronote/PronoteClient.js";
 import fs from "fs";
 const settings = JSON.parse(fs.readFileSync("./settings.json"));
 
@@ -13,12 +13,15 @@ const casChallenge = settings.pronote.cas;
 
 
 async function main() {
-    const session = await pronote.login(url, username, password, casChallenge);
-    let currentDate = new Date();
-    session.homeworks(new Date(currentDate.getFullYear(), 8, 1), currentDate).then(r => 
+    // const session = await pronote.login(url, username, password, casChallenge);
+    
+   /*  session.homeworks(new Date(settings.calendar.from), new Date(settings.calendar.to)).then(r => 
         r.forEach(work => {
             console.log(`COURS : ${work.subject}, DESCRIPTION : ${work.description}`);
-        }));
+        })); */
+
+    const pronote = new PronoteClient(url, username, password, casChallenge);
+    
 }
 
 
