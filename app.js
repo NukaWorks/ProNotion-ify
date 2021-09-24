@@ -21,6 +21,7 @@ async function main() {
         })); */
 
     const pronote = new PronoteClient(url, username, password, casChallenge);
+    console.log(pronote);
     
 }
 
