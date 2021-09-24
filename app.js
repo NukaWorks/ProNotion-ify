@@ -20,7 +20,7 @@ async function main() {
             console.log(`COURS : ${work.subject}, DESCRIPTION : ${work.description}`);
         })); */
 
-    const pronote = new PronoteClient(url, username, password, casChallenge);
+    const pronote = new PronoteClient().openSession(url, username, password, casChallenge);
     console.log(pronote);
     
 }
