@@ -3,19 +3,23 @@
 import pronote from "@dorian-eydoux/pronote-api";
 
 export default class PronoteClient {
+    
+    
     constructor(serverEndpoint, username, password, casChallenge) {
-        await openSession(serverEndpoint, username, password, casChallenge).then(e => {
-            e = curSession;
-            console.log(curSession);
-        });
-    }
-    _serverEndPoint;
-    get serverEndpoint() {
-        return this._serverEndPoint;
+        this.curSession = openSession(serverEndpoint, username, password, casChallenge);
+        return this.curSession;
     }
 
-    async openSession(serverEndpoint, username, password, casChallenge) {
-        serverEndpoint = this._serverEndPoint;
-        return await pronote.login(serverEndpoint, username, password, casChallenge);
+    serverEndPoint;
+
+    get serverEndPoint() {
+        return this.serverEndPoint;
     }
+
+   
+}
+
+async openSession(serverEndpoint, username, password, casChallenge) {
+    serverEndpoint = this.serverEndPoint;
+    return pronote.login(serverEndpoint, username, password, casChallenge);
 }
