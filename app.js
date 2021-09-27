@@ -11,5 +11,5 @@ const password = settings.pronote.password;
 const casChallenge = settings.pronote.cas;
 
 
-let pronote = await new PronoteClient(url, username, password, casChallenge);
+let pronote = new PronoteClient(url, username, password, casChallenge);
 console.log(pronote.serverEndPoint);
