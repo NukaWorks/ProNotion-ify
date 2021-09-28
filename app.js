@@ -10,6 +10,7 @@ const url = settings.pronote.endpoint_url;
 const username = settings.pronote.username;
 const password = settings.pronote.password;
 const casChallenge = settings.pronote.cas;
+
 async function main()
 {
     const session = await pronote.login(url, username, password, casChallenge);
