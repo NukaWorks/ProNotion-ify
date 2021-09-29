@@ -5,7 +5,7 @@ export default class Notion extends Client {
         super({ auth: token });
     }
 
-    async getNotionPageBlock(pageBlock) {
+    async getNotionBlock(pageBlock) {
         return await this.blocks.retrieve({ block_id: pageBlock});
     }
 }
